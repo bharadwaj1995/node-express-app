@@ -1,11 +1,11 @@
 const express = require('express')
 const app = express()
 
-const hostname = '127.0.0.1'   // set constants
+const hostname = '0.0.0.0'   // set constants
 const port = 3002
 
 app.get('/', function (req, res) {
-  res.send('Welcome home!')
+  res.send('Welcome home!'.fontcolor("red"))
 })
 
 app.get('/hello', (req, res) => {
@@ -23,6 +23,28 @@ app.get('/greeting/:id',  (req, res) =>{
 app.get('/yo/:buddy',  (req, res) =>{
   res.send('<h1>Yo, ' + req.params.buddy + '!</h1>')
 })
+
+
+app.get('/test_josn_res/:param1/:param2/:param3',  (req, res) =>{
+  
+  res.json({"Name": req.params.param1,
+          "LastName": req.params.param2,
+        "AGE": req.params.param3});
+})
+
+app.get('/test_josn_res/:param1/:param2/:param3',  (req, res) =>{
+  
+  res.json({"Name": req.params.param1,
+          "LastName": req.params.param2,
+        "AGE": req.params.param3});
+})
+
+
+app.get('/check_add_cal/:param1/:param2',  (req, res) =>{
+  
+  res.send('<h1> First parameter is ' + (req.params.param1) + ' <br> Second param is '+(req.params.param2)+'</h1>')
+})
+
 
 // handle non-existant routes
 app.use((req, res, next) => {
