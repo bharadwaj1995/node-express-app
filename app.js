@@ -32,15 +32,7 @@ app.get('/test_josn_res/:param1/:param2/:param3',  (req, res) =>{
         "AGE": req.params.param3});
 })
 
-app.get('/test_josn_res/:param1/:param2/:param3',  (req, res) =>{
-  
-  res.json({"Name": req.params.param1,
-          "LastName": req.params.param2,
-        "AGE": req.params.param3});
-})
-
-
-app.get('/check_add_cal/:param1/:param2',  (req, res) =>{
+app.get('/return_two_params/:param1/:param2',  (req, res) =>{
   
   res.send('<h1> First parameter is ' + (req.params.param1) + ' <br> Second param is '+(req.params.param2)+'</h1>')
 })
